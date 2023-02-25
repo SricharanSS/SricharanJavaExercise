@@ -1,14 +1,6 @@
 package Exercise8;
 import java.util.*;
 
-class StudentMarks {
-	int mark1,mark2,mark3;
-	
-	public int Average() {
-		return (mark1+mark2+mark3)/3;
-	}
-}
-
 public class Exercise8 {
 	public static void main(String[] args) throws Exception {
 		StudentMarks S = new StudentMarks();
@@ -17,6 +9,11 @@ public class Exercise8 {
 		for(int i=0; i<10; i++) {
 			System.out.print("Enter the marks of Student "+(i+1)+"(mark 1 mark 2 mark 3) : ");
 			input = scan.nextLine();
+			
+			if(input.equals("q") || input.equals("Q")) {
+				System.out.println("Exited");
+				break;
+			}
 		
 			try {
 				String mark[] = input.split("\\s");

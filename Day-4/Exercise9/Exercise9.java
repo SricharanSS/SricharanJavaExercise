@@ -1,45 +1,6 @@
 package Exercise9;
 import java.util.*;
 
-class NegativeNumberException extends Exception {
-	String msg;
-	NegativeNumberException(String msg) {
-		super(msg);
-	}
-	
-	@Override
-	public String toString() {
-		return msg;
-	}
-}
-
-class OutOfRangeException extends Exception {
-	String msg;
-	OutOfRangeException(String msg) {
-		super(msg);
-		this.msg = msg;
-	}
-	
-	@Override
-	public String toString() {
-		return msg;
-	}
-}
-
-class StudentMarks {
-	int mark1,mark2,mark3;
-	
-	public StudentMarks(int mark1, int mark2, int mark3) {
-		this.mark1 = mark1;
-		this.mark2 = mark2;
-		this.mark3 = mark3;
-	}
-	
-	public int Average() {
-		return (mark1+mark2+mark3)/3;
-	}
-}
-
 public class Exercise9 {
 	public static void main(String[] args) {
 		
