@@ -1,22 +1,23 @@
 package Exercise1;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class EvenAndOdd {
 	static int i;
 	public static void main(String[] args) {
-		ExecutorService es = Executors.newFixedThreadPool(2);
+		ExecutorService service = Executors.newFixedThreadPool(2);
 		
 		
-		es.execute(()-> {
+		service.execute(()-> {
 			PrintEven();
 		});
 		
-		es.execute(()-> {
+		service.execute(()-> {
 			PrintOdd();
 			
 		});
 		
-		es.shutdown();
+		service.shutdown();
 		
 	}
 	
