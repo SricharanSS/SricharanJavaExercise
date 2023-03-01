@@ -6,13 +6,12 @@ class Count {
 		count = 0;
 	}
 	public void count() {
-		count++;
-		System.out.print(count+" ");
-		if(count%10 == 0) {
-			System.out.println("Hello World....");
-		}
-		
 		try {
+			count++;
+			System.out.print(count+" ");
+			if(count%10 == 0) {
+				System.out.println("Hello World....");
+			}
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

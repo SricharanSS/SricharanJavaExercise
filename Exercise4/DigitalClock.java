@@ -1,31 +1,81 @@
 package Exercise4;
-import java.util.concurrent.*;
-import java.time.*;
 
-
-public class DigitalClock {
+class DigitalClock {
+	int second;
+	int minute;
+	int hour;
 	
-	public static void main(String[] args) {
-		LocalTime localtime = LocalTime.now();
-		int second = localtime.getSecond();
-		int minute = localtime.getMinute();
-		int hour = localtime.getHour();
-		
-		Clock clock = Clock.getInstance();
-		
-		clock.setClock(second, minute, hour);
-		
-		
-		ExecutorService executor = Executors.newFixedThreadPool(3);
-		
-		executor.execute(()-> {
-			while(true) {
-				clock.Second();
-			}
-		});
-		
-		
-		executor.shutdown();
+	DigitalClock(int second, int minute, int hour) {
+		this.second = second;
+		this.minute = minute;
+		this.hour = hour;
 	}
-
+	
+	void PrintClock() {
+		System.out.println(hour+":"+minute+":"+second);
+	}
+	
+	synchronized public void Second() {
+		
+		if(second < 59) {
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			second++;
+			notifyAll();
+		}
+		else {
+			
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		
+		}
+		
+		PrintClock();
+	}
+	
+	synchronized public void Minute() {
+		
+		if(minute == 59) {
+			minute = 0;
+		}
+		else if(second == 59 && minute < 59) {
+			second = 0;
+			minute++;
+		}
+		else {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		notifyAll();
+	}
+	
+	synchronized public void Hour() {
+		
+		if(hour == 23) {
+			hour = 0;
+		}
+		else if(minute == 59 && hour < 23) {
+			minute = 0;
+			hour++;
+		}
+		else {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		notifyAll();
+	}
 }
