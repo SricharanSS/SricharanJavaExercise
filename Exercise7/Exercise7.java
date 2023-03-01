@@ -1,6 +1,6 @@
 package Exercise7;
-
-import java.util.concurrent.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
 
 public class Exercise7 {
 	public static void main(String[] args) {
@@ -12,6 +12,5 @@ public class Exercise7 {
 				obj.count();
 			});
 		}
-		
 	}
 }
