@@ -11,6 +11,9 @@ public class BikeFactory {
 		else if(str.equals("Highness")) {
 			return new Highness();
 		}
+		else if(str.equals("Apache")) {
+			return new Apache();
+		}
 		else {
 			return null;
 		}

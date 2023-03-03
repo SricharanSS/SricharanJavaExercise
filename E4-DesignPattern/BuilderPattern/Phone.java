@@ -10,7 +10,7 @@ class Phone {
 		
 	}
 	
-	public void setScreenSize(int Screensize) {
+	public void setScreenSize(int ScreenSize) {
 		this.ScreenSize = ScreenSize;
 	}
 	public void setProcessorCount(int ProcessorCount) {

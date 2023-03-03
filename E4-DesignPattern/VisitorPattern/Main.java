@@ -13,5 +13,11 @@ public class Main {
         dog.accept(new MakeSound());
         dog.accept(new EatFood());
 
+
+        dog.accept(new Play());
+        cat.accept(new Play());
+
+        dog.accept(new fun());
+        cat.accept(new fun());
     }
 }
