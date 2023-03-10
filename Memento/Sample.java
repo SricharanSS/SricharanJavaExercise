@@ -2,23 +2,21 @@ package Memento;
 
 public class Sample {
     private int num;
-    Sample(int num) {
-        this.num = num;
-    }
-
+    CareTaker careTaker = new CareTaker();
     public void set(int num) {
         this.num = num;
     }
 
-    public int getNum() {
-        return num;
+    public void PrintNum() {
+        System.out.println("Number = "+num);
     }
 
-    public Memento saveSate() {
-        return new Memento(num);
+    public void saveSate() {
+        careTaker.addMemento(new Memento(num));
     }
 
-    public int returnValue() {
-        return num;
+    public void undoState() {
+        Memento previousState = careTaker.getMemento();
+        num = previousState.returnBackUp();
     }
 }

@@ -1,11 +1,10 @@
 package BridgePattern;
 
-import NotBridgePattern.BlueCircle;
-
 public class Main {
     public static void main(String[] args) {
-        Shape circle = new Circle(new RedCircle());
+        Shape circle = new Circle();
+        Color red = new Red();
 
-        circle.render();
+        circle.Draw(red);
     }
 }

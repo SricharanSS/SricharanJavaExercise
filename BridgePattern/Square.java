@@ -1,12 +1,13 @@
 package BridgePattern;
 
-public class Circle extends Shape{
-    String shape = "Circle";
+public class Square extends Shape{
+    String shape = "Square";
+
     /**
-     *
+     * 
      */
     @Override
-    void Draw(Color color) {
+    public void Draw(Color color) {
         System.out.println("Shape : "+this.shape);
         System.out.println("Color : "+color.returnColor());
     }

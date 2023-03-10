@@ -2,10 +2,16 @@ package Memento;
 
 public class Main {
     public static void main(String[] args) {
-        Sample obj = new Sample(10);
-        Memento backUp = obj.saveSate();
+        Sample sample = new Sample();
+        sample.set(10);
+        sample.PrintNum();
 
-        obj.set(20);
-        System.out.println(obj.returnValue());
+        sample.saveSate();
+
+        sample.set(20);
+        sample.PrintNum();
+
+        sample.undoState();
+        sample.PrintNum();
     }
 }
