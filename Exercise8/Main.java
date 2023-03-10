@@ -6,7 +6,6 @@ class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int count;
-
         while(true) {
             count = 0;
             String str;
@@ -16,6 +15,5 @@ class Main {
                 count = 0;
             }
         }
-
     }
 }

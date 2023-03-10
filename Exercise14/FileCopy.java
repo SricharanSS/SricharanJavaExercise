@@ -8,11 +8,11 @@ import java.io.FileWriter;
 public class FileCopy {
     public static void main(String[] args) {
         try {
-            File file1 = new File("/Users/sricharan/Documents/Exercise_Github/SricharanJavaExercise/Exercise14/test.txt");
+            File file1 = new File("Exercise14/test.txt");
             FileReader reader = new FileReader(file1);
             BufferedReader bufferedReader = new BufferedReader(reader);
             
-            File newFile = new File("/Users/sricharan/Documents/Exercise_Github/SricharanJavaExercise/Exercise14/newTest.txt");
+            File newFile = new File("Exercise14/newTest.txt");
             FileWriter writer = new FileWriter(newFile);
             char ch;
             int c;

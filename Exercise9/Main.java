@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine();
-        String stringArray[] = str.split(" ");
+        String[] stringArray = str.split(" ");
         
         int count = 0;
         stringArray[0].trim();
