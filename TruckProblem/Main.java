@@ -1,14 +1,18 @@
 package TruckProblem;
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import java.util.logging.Logger;
+
 public class Main {
     public static void main(String[] args) {
         Truck truck = new Truck();
         Scanner scan = new Scanner(System.in);
-        
+        Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
+        logger.info("Getting Inputs from User - speed (double) , distance (double)");
         System.out.print("Enter Speed : ");
         double speed = scan.nextDouble();
-        
+
         System.out.print("Enter Distance : ");
         double distance = scan.nextDouble();
         
@@ -20,8 +24,7 @@ public class Main {
 
         System.out.println("Estimated Arrival : ");
     	System.out.println(arraivalDate.getYear()+"-"+arraivalDate.getMonth().getValue()+"-"+arraivalDate.getDayOfMonth());
-    	System.out.print(arraivalDate.getHour()+":");
-    	System.out.printf("%02d%n",arraivalDate.getMinute());
+    	System.out.println(arraivalDate.getHour()+":"+arraivalDate.getMinute());
 
         scan.close();
     }

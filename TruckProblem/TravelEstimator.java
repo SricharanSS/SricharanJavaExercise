@@ -1,10 +1,13 @@
 package TruckProblem;
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class TravelEstimator {
     Truck truck;
     static final int DAILY_HOUR_LIMIT = 8;
+	Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
     Scanner scan = new Scanner(System.in);
     TravelEstimator(Truck truck) {
         this.truck = truck;
@@ -29,6 +32,8 @@ public class TravelEstimator {
         	
         	if(HolidayChecker.isHoliday(truck.localDateTime)) {
         		System.out.println("Holiday for today "+dd+","+mm+" "+yyyy);
+				logger.info("OUTPUT : Holiday for today "+dd+","+mm+" "+yyyy);
+
         		truck.localDateTime = truck.localDateTime.plusDays(1);
         	}
         	dd = truck.localDateTime.getDayOfMonth();
@@ -37,7 +42,7 @@ public class TravelEstimator {
         	
         	System.out.println("Enter starting time for "+dd+","+mm+" "+yyyy+" : ");
         	String time = scan.next();
-        	String times[] = time.split(":");
+        	String[] times = time.split(":");
         	startHour = Integer.parseInt(times[0]);
         	startMinute = Integer.parseInt(times[1]);
         	int remainingTime = ( (24-startHour-1)*60 + (60-startMinute) ); 
@@ -64,7 +69,6 @@ public class TravelEstimator {
     	truck.localDateTime = truck.localDateTime.plusHours(arrivalHour);
     	truck.localDateTime = truck.localDateTime.plusMinutes(arrivalMinute);
     	
-
 		return truck.localDateTime;   
     }
 }
