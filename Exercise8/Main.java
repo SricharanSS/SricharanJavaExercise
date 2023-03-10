@@ -13,6 +13,7 @@ class Main {
             while( (str = scan.next()).charAt(0) != ' ')  {
                 count = count + str.length();
                 System.out.println(count);
+                count = 0;
             }
         }
 
