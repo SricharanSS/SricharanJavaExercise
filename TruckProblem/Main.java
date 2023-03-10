@@ -1,4 +1,5 @@
 package TruckProblem;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,11 @@ public class Main {
         truck.setDistance(distance);
 
         TravelEstimator estimator = new TravelEstimator(truck);
-        estimator.estimateArrival();
+        LocalDateTime arraivalDate = estimator.estimateArrival();
+
+        System.out.println("Estimated Arrival : ");
+    	System.out.println(arraivalDate.getYear()+"-"+arraivalDate.getMonth().getValue()+"-"+arraivalDate.getDayOfMonth());
+    	System.out.print(arraivalDate.getHour()+":");
+    	System.out.printf("%02d%n",arraivalDate.getMinute());
     }
 }

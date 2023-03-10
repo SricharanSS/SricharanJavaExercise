@@ -8,7 +8,7 @@ public class Truck {
 		localDateTime = LocalDateTime.now();
 	}
 	
-    final static int DAILY_LIMIT = 8;
+    static final int DAILY_LIMIT = 8;
     private double speed;
     private double distance;
     LocalDateTime localDateTime;

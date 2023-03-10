@@ -1,5 +1,6 @@
 package TruckProblem;
-import java.time.Month;
+import java.time.LocalDateTime;
+//import java.time.Month;
 import java.util.Scanner;
 
 public class TravelEstimator {
@@ -11,7 +12,7 @@ public class TravelEstimator {
     }
 
     
-    public void estimateArrival() {
+    public LocalDateTime estimateArrival() {
 
     	double speed = truck.getSpeed();
         double distance = truck.getDistance();
@@ -64,12 +65,7 @@ public class TravelEstimator {
     	truck.localDateTime = truck.localDateTime.plusHours(arrivalHour);
     	truck.localDateTime = truck.localDateTime.plusMinutes(arrivalMinute);
     	
-    	System.out.println("Estimated Arrival : ");
-    	System.out.println(truck.localDateTime.getYear()+"-"+truck.localDateTime.getMonth().getValue()+"-"+truck.localDateTime.getDayOfMonth());
-    	System.out.print(truck.localDateTime.getHour()+":");
-    	System.out.printf("%02d%n",truck.localDateTime.getMinute());
-        
+
+		return truck.localDateTime;   
     }
-
-
 }
