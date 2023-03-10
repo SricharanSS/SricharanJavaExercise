@@ -1,11 +1,10 @@
 package TruckProblem;
 import java.time.LocalDateTime;
-//import java.time.Month;
 import java.util.Scanner;
 
 public class TravelEstimator {
     Truck truck;
-    final static int DAILY_HOUR_LIMIT = 8;
+    static final int DAILY_HOUR_LIMIT = 8;
     Scanner scan = new Scanner(System.in);
     TravelEstimator(Truck truck) {
         this.truck = truck;

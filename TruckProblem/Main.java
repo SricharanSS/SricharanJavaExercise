@@ -22,5 +22,7 @@ public class Main {
     	System.out.println(arraivalDate.getYear()+"-"+arraivalDate.getMonth().getValue()+"-"+arraivalDate.getDayOfMonth());
     	System.out.print(arraivalDate.getHour()+":");
     	System.out.printf("%02d%n",arraivalDate.getMinute());
+
+        scan.close();
     }
 }

@@ -5,7 +5,7 @@ import java.time.temporal.WeekFields;
 import java.util.Locale;
 
 public class HolidayChecker {
-	static public boolean isHoliday(LocalDateTime date) {
+	public static boolean isHoliday(LocalDateTime date) {
 		if(date.getDayOfWeek().getValue() == 7) {
 			return true;
 		}
