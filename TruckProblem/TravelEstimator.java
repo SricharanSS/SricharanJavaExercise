@@ -12,6 +12,7 @@ public class TravelEstimator {
 
     
     public void estimateArrival() {
+
     	double speed = truck.getSpeed();
         double distance = truck.getDistance();
         int startHour;
@@ -23,7 +24,7 @@ public class TravelEstimator {
         while(distance != 0) {
         	
         	int dd = truck.localDateTime.getDayOfMonth();
-        	Month mm = truck.localDateTime.getMonth();
+        	int mm = truck.localDateTime.getMonthValue();
         	int yyyy = truck.localDateTime.getYear();
         	
         	if(HolidayChecker.isHoliday(truck.localDateTime)) {
@@ -31,7 +32,7 @@ public class TravelEstimator {
         		truck.localDateTime = truck.localDateTime.plusDays(1);
         	}
         	dd = truck.localDateTime.getDayOfMonth();
-        	mm = truck.localDateTime.getMonth();
+        	mm = truck.localDateTime.getMonthValue();
         	yyyy = truck.localDateTime.getYear();
         	
         	System.out.println("Enter starting time for "+dd+","+mm+" "+yyyy+" : ");
