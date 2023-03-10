@@ -1,4 +1,5 @@
 package TruckProblem;
+import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -20,7 +21,14 @@ public class Main {
         truck.setDistance(distance);
 
         TravelEstimator estimator = new TravelEstimator(truck);
-        LocalDateTime arraivalDate = estimator.estimateArrival();
+        LocalDateTime arraivalDate = null;
+        try {
+            arraivalDate = estimator.estimateArrival();
+        }
+        catch(DateTimeException e) {
+            System.out.println(e.getMessage());
+            logger.warning(e.getMessage());
+        }
 
         System.out.println("Estimated Arrival : ");
     	System.out.println(arraivalDate.getYear()+"-"+arraivalDate.getMonth().getValue()+"-"+arraivalDate.getDayOfMonth());

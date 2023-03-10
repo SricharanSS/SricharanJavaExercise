@@ -6,6 +6,7 @@ import java.util.Locale;
 
 public class HolidayChecker {
 	public static boolean isHoliday(LocalDateTime date) {
+		
 		WeekFields weekFields = WeekFields.of(Locale.getDefault()); 
 		int weekNumber = date.get(weekFields.weekOfMonth());
 
