@@ -19,8 +19,8 @@ public class TravelEstimator {
 
     	double speed = truck.getSpeed();
         double distance = truck.getDistance();
-        int startHour;
-        int startMinute;
+        int startHour = 0;
+        int startMinute = 0;
         
         double arrivalTime;
         int arrivalHour = 0;
@@ -34,7 +34,6 @@ public class TravelEstimator {
 				int yyyy = truck.localDateTime.getYear();
 				
 				if(HolidayChecker.isHoliday(truck.localDateTime)) {
-					System.out.println("Holiday for today "+dd+","+mm+" "+yyyy);
 					logger.info("OUTPUT : Holiday for today "+dd+","+mm+" "+yyyy);
 	
 					truck.localDateTime = truck.localDateTime.plusDays(1);
@@ -43,11 +42,18 @@ public class TravelEstimator {
 				mm = truck.localDateTime.getMonthValue();
 				yyyy = truck.localDateTime.getYear();
 				
-				System.out.println("Enter starting time for "+dd+","+mm+" "+yyyy+" : ");
+				logger.info("Enter starting time for "+dd+","+mm+" "+yyyy+" (FORMAT HH:MM) : ");
 				String time = scan.next();
-				String[] times = time.split(":");
-				startHour = Integer.parseInt(times[0]);
-				startMinute = Integer.parseInt(times[1]);
+				String[] times;
+				try {
+					times = time.split(":");
+					startHour = Integer.parseInt(times[0]);
+					startMinute = Integer.parseInt(times[1]);
+				}
+				catch(ArrayIndexOutOfBoundsException e) {
+					logger.info("Enter Correct Format for Time");
+					continue;
+				}
 				int remainingTime = ( (24-startHour-1)*60 + (60-startMinute) ); 
 				int travelTime;
 				if(remainingTime >= DAILY_HOUR_LIMIT*60) {
