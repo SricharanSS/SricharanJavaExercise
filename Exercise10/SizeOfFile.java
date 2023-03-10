@@ -8,10 +8,6 @@ import java.nio.file.Paths;
 
 public class SizeOfFile {
     
-    /** 
-     * @param args
-     * @throws IOException
-     */
     public static void main(String[] args) throws IOException {
 
         try {

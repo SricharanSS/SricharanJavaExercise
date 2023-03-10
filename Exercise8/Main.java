@@ -9,7 +9,7 @@ class Main {
         while(true) {
             count = 0;
             String str;
-            while( (str = scan.next()).charAt(0) != ' ')  {
+            while( !((str = scan.next()).isEmpty()) )  {
                 count = count + str.length();
                 System.out.println(count);
                 count = 0;

@@ -4,9 +4,6 @@ import java.io.File;
 
 public class RenameFile {
     
-    /** 
-     * @param args
-     */
     public static void main(String[] args) {
         File file = new File("/Users/sricharan/Documents/Exercise_Github/SricharanJavaExercise/Exercise10/TestFile.txt");
 
